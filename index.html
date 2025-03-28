@@ -36,54 +36,70 @@
 
    // Adding circles
    var circles = [
-   [33.9381, -118.2468], // South Central LA
-   [33.9285, -118.2500], // Florence-Graham
-   [33.9380, -118.2752], // Watts
-   [33.9248, -118.2115], // Huntington Park
-   [33.9400, -118.2211], // Walnut Park
-   [33.9481, -118.2436], // South LA
-   [33.9203, -118.1861], // Bell
-   [33.9617, -118.2519], // Willowbrook
-   [33.9232, -118.1915], // Cudahy
-   [33.9480, -118.1956], // South Gate
-   [33.9304, -118.2116], // Lynwood
-   [33.8895, -118.1598], // Paramount
-   [33.8719, -118.0840], // North Long Beach (close to lower-income areas)
-   [33.8960, -118.2283], // Rancho Dominguez
-   [33.9915, -118.2488], // Vernon / South East edge of LA
-   [33.9235, -118.2764], // Near Jordan Downs Housing Projects
-   [33.9164, -118.3414], // West Compton
-   [33.8891, -118.2980], // East Compton
-   [33.8645, -118.2606], // Dominguez
-   [33.8616, -118.2110], //carson
-   [33.9898, -118.2772], // Vermont-Slauson
-   [33.9716, -118.2487], // Central-Alameda
-   [34.0039, -118.2581], // Historic South-Central
-   [34.0155, -118.2871], // Exposition Park
-   [34.0266, -118.2942], // USC/University Park
-   [34.0075, -118.2912], // King Estates
-   [33.9569, -118.3090], // Hyde Park
-   [33.9640, -118.2760], // Green Meadows
-   [33.9755, -118.2683], // South Park
-   [34.0078, -118.2746], // Jefferson Park (borderline)
-   [33.9985, -118.3320], // Baldwin Village
-   [33.9465, -118.3331], // Westmont
-   [33.9614, -118.2994], // Gramercy Park
-   [33.9431, -118.3043], // Manchester Square
-   [33.9313, -118.3617], // West Athens
-   [33.9612, -118.2325], // Florence-Firestone east
-  
-   ];
+  { name: "South Central LA", description: "", lat: 33.9381, lng: -118.2468, source: "" },
+  { name: "Florence-Graham", description: "", lat: 33.9285, lng: -118.2500, source: "" },
+  { name: "Watts", description: "", lat: 33.9380, lng: -118.2752, source: "" },
+  { name: "Huntington Park", description: "", lat: 33.9248, lng: -118.2115, source: "" },
+  { name: "Walnut Park", description: "", lat: 33.9400, lng: -118.2211, source: "" },
+  { name: "South LA", description: "", lat: 33.9481, lng: -118.2436, source: "" },
+  { name: "Bell", description: "", lat: 33.9203, lng: -118.1861, source: "" },
+  { name: "Willowbrook", description: "", lat: 33.9617, lng: -118.2519, source: "" },
+  { name: "Cudahy", description: "", lat: 33.9232, lng: -118.1915, source: "" },
+  { name: "South Gate", description: "", lat: 33.9480, lng: -118.1956, source: "" },
+  { name: "Lynwood", description: "", lat: 33.9304, lng: -118.2116, source: "" },
+  { name: "Paramount", description: "", lat: 33.8895, lng: -118.1598, source: "" },
+  { name: "North Long Beach", description: "Close to lower-income areas", lat: 33.8719, lng: -118.0840, source: "" },
+  { name: "Rancho Dominguez", description: "", lat: 33.8960, lng: -118.2283, source: "" },
+  { name: "Vernon / Southeast LA", description: "", lat: 33.9915, lng: -118.2488, source: "" },
+  { name: "Near Jordan Downs", description: "", lat: 33.9235, lng: -118.2764, source: "" },
+  { name: "West Compton", description: "", lat: 33.9164, lng: -118.3414, source: "" },
+  { name: "East Compton", description: "", lat: 33.8891, lng: -118.2980, source: "" },
+  { name: "Dominguez", description: "", lat: 33.8645, lng: -118.2606, source: "" },
+  { name: "Carson", description: "", lat: 33.8616, lng: -118.2110, source: "" },
+  { name: "Vermont-Slauson", description: "", lat: 33.9898, lng: -118.2772, source: "" },
+  { name: "Central-Alameda", description: "", lat: 33.9716, lng: -118.2487, source: "" },
+  { name: "Historic South-Central", description: "", lat: 34.0039, lng: -118.2581, source: "" },
+  { name: "Exposition Park", description: "", lat: 34.0155, lng: -118.2871, source: "" },
+  { name: "USC/University Park", description: "", lat: 34.0266, lng: -118.2942, source: "" },
+  { name: "King Estates", description: "", lat: 34.0075, lng: -118.2912, source: "" },
+  { name: "Hyde Park", description: "", lat: 33.9569, lng: -118.3090, source: "" },
+  { name: "Green Meadows", description: "", lat: 33.9640, lng: -118.2760, source: "" },
+  { name: "South Park", description: "", lat: 33.9755, lng: -118.2683, source: "" },
+  { name: "Jefferson Park", description: "Borderline", lat: 34.0078, lng: -118.2746, source: "" },
+  { name: "Baldwin Village", description: "", lat: 33.9985, lng: -118.3320, source: "" },
+  { name: "Westmont", description: "", lat: 33.9465, lng: -118.3331, source: "" },
+  { name: "Gramercy Park", description: "", lat: 33.9614, lng: -118.2994, source: "" },
+  { name: "Manchester Square", description: "", lat: 33.9431, lng: -118.3043, source: "" },
+  { name: "West Athens", description: "", lat: 33.9313, lng: -118.3617, source: "" },
+  { name: "Florence-Firestone East", description: "", lat: 33.9612, lng: -118.2325, source: "" },
+
+  // Your added entries with full info
+  { name: "Hollywood between Highland and La Brea", description: "A vibrant section of Hollywood Boulevard featuring the Hollywood Walk of Fame, historic theaters, and bustling tourist attractions.", lat: 34.1016, lng: -118.3452, source: "https://en.wikipedia.org/wiki/Hollywood_Boulevard" },
+  { name: "Sunset Boulevard", description: "An iconic 22-mile stretch running from Downtown Los Angeles to the Pacific Coast Highway, passing through Hollywood, Beverly Hills, and Bel Air, known for its nightlife and cultural landmarks.", lat: 34.0953, lng: -118.3726, source: "https://en.wikipedia.org/wiki/Sunset_Boulevard" },
+  { name: "Park in Wilmington (1st and Avalon)", description: "A community park located at the intersection of 1st Street and Avalon Boulevard in Wilmington, offering recreational facilities and green space for local residents.", lat: 33.7809, lng: -118.2621, source: "https://www.laparks.org/park/wilmington" },
+  { name: "Homeland Cultural Center (East Anaheim)", description: "A cultural hub in East Anaheim dedicated to promoting arts, education, and community engagement through various programs and events.", lat: 33.7828, lng: -118.1747, source: "https://www.longbeach.gov/park/recreation-programs/homeland-cultural-center/" },
+  { name: "3rd Street Promenade (Santa Monica)", description: "A bustling open-air shopping and dining destination in Santa Monica, known for its street performers and lively atmosphere.", lat: 34.0163, lng: -118.4969, source: "https://www.downtownsm.com/" },
+  { name: "Santa Monica Airport (3026 Airport Ave)", description: "A general aviation airport located in Santa Monica, offering various aviation services and home to the Museum of Flying.", lat: 34.0131, lng: -118.4496, source: "https://www.smgov.net/departments/airport/" },
+  { name: "Rosa Parks Station (Willowbrook Metro Station)", description: "A major transit hub in Willowbrook, serving as a connection point for the Metro A Line (Blue) and C Line (Green), facilitating commuter movement across Los Angeles.", lat: 33.9280, lng: -118.2373, source: "https://www.metro.net/riding/stations/willowbrook-rosa-parks/" },
+  { name: "MacArthur Park Station", description: "A Metro B Line (Red) station located near MacArthur Park, providing access to the surrounding Westlake neighborhood and its diverse cultural offerings.", lat: 34.0573, lng: -118.2758, source: "https://www.metro.net/riding/stations/westlake-macarthur-park/" },
+  { name: "Wilshire and Western Station", description: "The western terminus of the Metro D Line (Purple), situated at the intersection of Wilshire Boulevard and Western Avenue, serving the Koreatown area.", lat: 34.0619, lng: -118.3087, source: "https://www.metro.net/riding/stations/wilshire-western/" },
+  { name: "North Hollywood Station", description: "A key transit station in the San Fernando Valley, connecting the Metro B Line (Red) subway with the G Line (Orange) busway, facilitating cross-valley travel.", lat: 34.1688, lng: -118.3766, source: "https://www.metro.net/riding/stations/north-hollywood/" },
+  { name: "Wilshire and Vermont", description: "A major intersection in Los Angeles featuring a Metro D Line (Purple) station, providing access to the surrounding neighborhoods and local businesses.", lat: 34.0620, lng: -118.2916, source: "https://www.metro.net/riding/stations/wilshire-vermont/" }
+];
 
 
-   circles.forEach(function(coord) {
-       L.circle(coord, {
-           color: "red",
-           fillColor: "red",
-           fillOpacity: 0.5,
-           radius: 500
-       }).addTo(map);
-   });
+
+circles.forEach(function(loc) {
+  L.circle([loc.lat, loc.lng], {
+    color: "red",
+    fillColor: "red",
+    fillOpacity: 0.5,
+    radius: 500
+  })
+  .addTo(map)
+  .bindPopup("<b>" + loc.name + "</b><br>" + loc.description + "<br><a href='" + loc.source + "' target='_blank'>More Info</a>");
+});
+
 
 
    // Adding markers with popups
