@@ -33,6 +33,11 @@
        maxZoom: 18
    }).addTo(map);
 
+   var redIcon = L.AwesomeMarkers.icon({
+     icon: 'info-sign',
+     markerColor: 'red'
+   });
+
 
    // Adding circles
    var circles = [
@@ -43,7 +48,7 @@
   { name: "Walnut Park", description: "", lat: 33.9400, lng: -118.2211, source: "" },
   { name: "South LA", description: "", lat: 33.9481, lng: -118.2436, source: "" },
   { name: "Bell", description: "", lat: 33.9203, lng: -118.1861, source: "" },
-  { name: "Willowbrook", description: "", lat: 33.9617, lng: -118.2519, source: "" },
+  //{ name: "Willowbrook", description: "", lat: 33.9617, lng: -118.2519, source: "" },
   { name: "Cudahy", description: "", lat: 33.9232, lng: -118.1915, source: "" },
   { name: "South Gate", description: "", lat: 33.9480, lng: -118.1956, source: "" },
   { name: "Lynwood", description: "", lat: 33.9304, lng: -118.2116, source: "" },
@@ -56,26 +61,25 @@
   { name: "East Compton", description: "", lat: 33.8891, lng: -118.2980, source: "" },
   { name: "Dominguez", description: "", lat: 33.8645, lng: -118.2606, source: "" },
   { name: "Carson", description: "", lat: 33.8616, lng: -118.2110, source: "" },
-  { name: "Vermont-Slauson", description: "", lat: 33.9898, lng: -118.2772, source: "" },
-  { name: "Central-Alameda", description: "", lat: 33.9716, lng: -118.2487, source: "" },
+  //{ name: "Vermont-Slauson", description: "", lat: 33.9898, lng: -118.2772, source: "" },
+  //{ name: "Central-Alameda", description: "", lat: 33.9716, lng: -118.2487, source: "" },
   { name: "Historic South-Central", description: "", lat: 34.0039, lng: -118.2581, source: "" },
-  { name: "Exposition Park", description: "", lat: 34.0155, lng: -118.2871, source: "" },
-  { name: "USC/University Park", description: "", lat: 34.0266, lng: -118.2942, source: "" },
-  { name: "King Estates", description: "", lat: 34.0075, lng: -118.2912, source: "" },
+  //{ name: "Exposition Park", description: "", lat: 34.014261, lng: -118.287594, source: "" }, 
+  //{ name: "USC/University Park", description: "", lat: 34.0266, lng: -118.2942, source: "" },
+  //{ name: "King Estates", description: "", lat: 34.0075, lng: -118.2912, source: "" },
   { name: "Hyde Park", description: "", lat: 33.9569, lng: -118.3090, source: "" },
   { name: "Green Meadows", description: "", lat: 33.9640, lng: -118.2760, source: "" },
   { name: "South Park", description: "", lat: 33.9755, lng: -118.2683, source: "" },
   { name: "Jefferson Park", description: "Borderline", lat: 34.0078, lng: -118.2746, source: "" },
-  { name: "Baldwin Village", description: "", lat: 33.9985, lng: -118.3320, source: "" },
+  //{ name: "Baldwin Village", description: "", lat: 33.9985, lng: -118.3320, source: "" },
   { name: "Westmont", description: "", lat: 33.9465, lng: -118.3331, source: "" },
   { name: "Gramercy Park", description: "", lat: 33.9614, lng: -118.2994, source: "" },
   { name: "Manchester Square", description: "", lat: 33.9431, lng: -118.3043, source: "" },
   { name: "West Athens", description: "", lat: 33.9313, lng: -118.3617, source: "" },
   { name: "Florence-Firestone East", description: "", lat: 33.9612, lng: -118.2325, source: "" },
 
-  // Your added entries with full info
   { name: "Hollywood between Highland and La Brea", description: "A vibrant section of Hollywood Boulevard featuring the Hollywood Walk of Fame, historic theaters, and bustling tourist attractions.", lat: 34.1016, lng: -118.3452, source: "https://en.wikipedia.org/wiki/Hollywood_Boulevard" },
-  { name: "Sunset Boulevard", description: "An iconic 22-mile stretch running from Downtown Los Angeles to the Pacific Coast Highway, passing through Hollywood, Beverly Hills, and Bel Air, known for its nightlife and cultural landmarks.", lat: 34.0953, lng: -118.3726, source: "https://en.wikipedia.org/wiki/Sunset_Boulevard" },
+  //{ name: "Sunset Boulevard", description: "An iconic 22-mile stretch running from Downtown Los Angeles to the Pacific Coast Highway, passing through Hollywood, Beverly Hills, and Bel Air, known for its nightlife and cultural landmarks.", lat: 34.0953, lng: -118.3726, source: "https://en.wikipedia.org/wiki/Sunset_Boulevard" },
   { name: "Park in Wilmington", description: "A community park located at the intersection of 1st Street and Avalon Boulevard in Wilmington, offering recreational facilities and green space for local residents.", lat: 33.7809, lng: -118.2621, source: "https://www.laparks.org/park/wilmington" },
   { name: "Homeland Cultural Center", description: "A cultural hub in East Anaheim dedicated to promoting arts, education, and community engagement through various programs and events.", lat: 33.7828, lng: -118.1747, source: "https://www.longbeach.gov/park/recreation-programs/homeland-cultural-center/" },
   { name: "3rd Street Promenade", description: "A bustling open-air shopping and dining destination in Santa Monica, known for its street performers and lively atmosphere.", lat: 34.0163, lng: -118.4969, source: "https://www.downtownsm.com/" },
@@ -84,32 +88,69 @@
   { name: "MacArthur Park Station", description: "A Metro B Line (Red) station located near MacArthur Park, providing access to the surrounding Westlake neighborhood and its diverse cultural offerings.", lat: 34.0573, lng: -118.2758, source: "https://www.metro.net/riding/stations/westlake-macarthur-park/" },
   { name: "Wilshire and Western Station", description: "The western terminus of the Metro D Line (Purple), situated at the intersection of Wilshire Boulevard and Western Avenue, serving the Koreatown area.", lat: 34.0619, lng: -118.3087, source: "https://www.metro.net/riding/stations/wilshire-western/" },
   { name: "North Hollywood Station", description: "A key transit station in the San Fernando Valley, connecting the Metro B Line (Red) subway with the G Line (Orange) busway, facilitating cross-valley travel.", lat: 34.1688, lng: -118.3766, source: "https://www.metro.net/riding/stations/north-hollywood/" },
-  { name: "Wilshire and Vermont", description: "A major intersection in Los Angeles featuring a Metro D Line (Purple) station, providing access to the surrounding neighborhoods and local businesses.", lat: 34.0620, lng: -118.2916, source: "https://www.metro.net/riding/stations/wilshire-vermont/" }
+  { name: "Wilshire and Vermont", description: "A major intersection in Los Angeles featuring a Metro D Line (Purple) station, providing access to the surrounding neighborhoods and local businesses.", lat: 34.0620, lng: -118.2916, source: "https://www.metro.net/riding/stations/wilshire-vermont/" },
+  {
+    name: "Hollywood Walk of Fame",
+    description: "",
+    lat: 34.101639,
+    lng: -118.326782,
+    source: ""
+  },
+  {
+    name: "Southern Flank of Exposition Park",
+    description: "",
+    lat: 34.012348, 
+    lng: -118.286694,
+    source: ""
+  },
+  {
+    name: "Gilbert Lindsay Recreation Center",
+    description: "",
+    lat: 34.0045,
+    lng: -118.2645,
+    source: ""
+  },
+  {
+    name: "Augustus F. Hawkins Natural Park",
+    description: "",
+    lat: 33.99028,
+    lng: -118.24667,
+    source: ""
+  },
+  {
+    name: "South Park",
+    description: "",
+    lat: 34.041304,
+    lng: -118.261989,
+    source: ""
+  },
+  {
+    name: "Roosevelt Park",
+    description: "",
+    lat: 33.970015,
+    lng: -118.242017,
+    source: ""
+  }
 ];
 
 
 
 circles.forEach(function(loc) {
-  L.circle([loc.lat, loc.lng], {
-    color: "red",
-    fillColor: "red",
-    fillOpacity: 0.5,
-    radius: 500
-  })
-  .addTo(map)
-  .bindPopup("<b>" + loc.name + "</b><br>" + loc.description + "<br><a href='" + loc.source + "' target='_blank'>More Info</a>");
-});
+     L.marker([loc.lat, loc.lng], { icon: redIcon })
+       .addTo(map)
+       .bindPopup("<b>" + loc.name + "</b><br>" + loc.description + "<br><a href='" + loc.source + "' target='_blank'>More Info</a>");
+   });
 
 
 
    // Adding markers with popups
    var locations = [
    //{ "name": "Griffith Park", "description": "One of the largest urban parks in the U.S., home to hiking trails, the Griffith Observatory, and the Los Angeles Zoo.", "latitude": 34.1366, "longitude": -118.2942, "source": "https://www.laparks.org/griffithpark" },
-   { "name": "Echo Park Lake", "description": "A scenic park featuring a lake with pedal boats, walking paths, and city skyline views.", "latitude": 34.0782, "longitude": -118.2606, "source": "https://www.laparks.org/park/echo" },
+   //{ "name": "Echo Park Lake", "description": "A scenic park featuring a lake with pedal boats, walking paths, and city skyline views.", "latitude": 34.0782, "longitude": -118.2606, "source": "https://www.laparks.org/park/echo" },
    //{ "name": "Runyon Canyon Park", "description": "Popular hiking trails with stunning views of the LA skyline and the Hollywood Sign.", "latitude": 34.1053, "longitude": -118.3480, "source": "https://www.laparks.org/park/runyon-canyon" },
    //{ "name": "Elysian Park", "description": "The oldest park in LA, offering scenic trails, picnic areas, and views of Dodger Stadium.", "latitude": 34.0844, "longitude": -118.2364, "source": "https://www.laparks.org/park/elysian" },
-   { "name": "Los Angeles State Historic Park", "description": "A 32-acre park featuring open green spaces, walking paths, and cultural events.", "latitude": 34.0720, "longitude": -118.2262, "source": "https://www.parks.ca.gov/?page_id=22272" },
-   { "name": "Vista Hermosa Natural Park", "description": "A hidden gem in downtown LA with walking trails, picnic areas, and city views.", "latitude": 34.0635, "longitude": -118.2552, "source": "https://www.mrca.ca.gov/parks/park-listing/vista-hermosa-natural-park/" },
+   { "name": "Los Angeles State Historic Park", "description": "A 32-acre park featuring open green spaces, walking paths, and cultural events.", "latitude": 34.06827405607846, "longitude": -118.23166693814981, "source": "https://www.parks.ca.gov/?page_id=22272" },
+   { "name": "Vista Hermosa Natural Park", "description": "A hidden gem in downtown LA with walking trails, picnic areas, and city views.", "latitude": 34.06237609744652, "longitude": -118.25622311348516, "source": "https://www.mrca.ca.gov/parks/park-listing/vista-hermosa-natural-park/" },
    { "name": "Kenneth Hahn State Recreation Area", "description": "A large park featuring hiking trails, sports fields, fishing lakes, and scenic overlooks.", "latitude": 34.0060, "longitude": -118.3615, "source": "https://parks.lacounty.gov/kenneth-hahn-state-recreation-area/" },
    //{ "name": "Santa Monica Third Street Promenade", "description": "A pedestrian-only shopping and dining district just blocks from the beach.", "latitude": 34.0169, "longitude": -118.4965, "source": "https://www.santamonica.com/what-to-do/shopping/third-street-promenade/" },
    //add culver city steps
@@ -117,19 +158,19 @@ circles.forEach(function(loc) {
    //{ "name": "The Last Bookstore", "description": "Iconic independent bookstore with new and used books, records, and community events.", "latitude": 34.0479, "longitude": -118.2498, "source": "https://lastbookstorela.com/" },
    //{ "name": "Venice Beach Boardwalk", "description": "A bustling pedestrian-friendly promenade featuring street performers, markets, and beach access.", "latitude": 33.9850, "longitude": -118.4695, "source": "https://www.venicebeach.com/" },
    { "name": "Grand Central Market", "description": "Historic food market with vendors, seating, and cultural events.", "latitude": 34.0504, "longitude": -118.2488, "source": "https://www.grandcentralmarket.com/" },
-   { "name": "Leimert Park Village", "description": "A cultural hub for African-American art, music, and community events.", "latitude": 34.0103, "longitude": -118.3235, "source": "https://en.wikipedia.org/wiki/Leimert_Park,_Los_Angeles" },
+   { "name": "Leimert Park Village", "description": "A cultural hub for African-American art, music, and community events.", "latitude": 34.00393033734908, "longitude": -118.33155422735872, "source": "https://en.wikipedia.org/wiki/Leimert_Park,_Los_Angeles" },
    //{ "name": "Arts District Los Angeles", "description": "A walkable area with art galleries, coffee shops, and street murals.", "latitude": 34.0439, "longitude": -118.2359, "source": "https://www.discoverlosangeles.com/explore/los-angeles-arts-district" },
    { "name": "Downtown Los Angeles (Historic Core)", "description": "A highly walkable area with pedestrian-friendly streets, historic buildings, and vibrant retail spaces.", "latitude": 34.0455, "longitude": -118.2506, "source": "https://www.walkscore.com/CA/Los_Angeles/Historic_Core" },
    { "name": "Old Pasadena", "description": "A historic district with walkable streets, public transportation access, and a variety of shops and restaurants.", "latitude": 34.1478, "longitude": -118.1445, "source": "https://www.oldpasadena.org/" },
    { "name": "West Hollywood Design District", "description": "A vibrant area known for its pedestrian-friendly streets, outdoor cafes, and luxury retail.", "latitude": 34.0815, "longitude": -118.3772, "source": "https://www.visitwesthollywood.com/" },
    { "name": "Culver City Arts District", "description": "A creative hub featuring galleries, pedestrian walkways, and a variety of shops and restaurants.", "latitude": 34.0286, "longitude": -118.3857, "source": "https://www.culvercity.org/" },
-   { "name": "Silver Lake Reservoir Walkway", "description": "A scenic walking path around the reservoir, popular with runners, walkers, and cyclists.", "latitude": 34.1062, "longitude": -118.2703, "source": "https://www.laparks.org/" },
+   { "name": "Silverlake Reservoir Walkway", "description": "A scenic walking path around the reservoir, popular with runners, walkers, and cyclists.", "latitude": 34.09808895854922, "longitude": -118.2644010041325, "source": "https://www.laparks.org/" },
    { "name": "Grand Park", "description": "A centrally located public park with wide walkways, green spaces, and community events.", "latitude": 34.0553, "longitude": -118.2468, "source": "https://grandparkla.org/" },
-   { "name": "Echo Park Lake", "description": "A scenic walking trail around a lake with pedal boats, cafes, and picnic spots.", "latitude": 34.0782, "longitude": -118.2606, "source": "https://www.laparks.org/park/echo" },
+   { "name": "Echo Park Lake", "description": "A scenic walking trail around a lake with pedal boats, cafes, and picnic spots.", "latitude": 34.0730220973118, "longitude": -118.26080638764026, "source": "https://www.laparks.org/park/echo" },
    //{ "name": "The Getty Center", "description": "An iconic art museum with beautiful gardens and panoramic views of Los Angeles.", "latitude": 34.0780, "longitude": -118.4741, "source": "https://www.getty.edu/visit/center/" },
    //{ "name": "The Broad", "description": "A contemporary art museum featuring works by renowned artists such as Yayoi Kusama and Jeff Koons.", "latitude": 34.0544, "longitude": -118.2508, "source": "https://www.thebroad.org/" },
    //{ "name": "El Matador State Beach", "description": "A picturesque beach with sea caves and dramatic rock formations.", "latitude": 34.0259, "longitude": -118.8310, "source": "https://www.parks.ca.gov/?page_id=445" },
-   { "name": "Hollywood Walk of Fame", "description": "The world-famous street embedded with over 2,700 stars honoring celebrities.", "latitude": 34.1016, "longitude": -118.3269, "source": "https://www.walkoffame.com/" },
+   //{ "name": "Hollywood Walk of Fame", "description": "The world-famous street embedded with over 2,700 stars honoring celebrities.", "latitude": 34.1016, "longitude": -118.3269, "source": "https://www.walkoffame.com/" },
    { "name": "Griffith Observatory", "description": "A popular spot for stargazing and views of the Hollywood Sign and downtown LA.", "latitude": 34.1184, "longitude": -118.3004, "source": "https://griffithobservatory.org/" },
    { "name": "The Huntington Library, Art Museum, and Botanical Gardens", "description": "A stunning collection of art, rare books, and expansive gardens.", "latitude": 34.1298, "longitude": -118.1143, "source": "https://www.huntington.org/" },
   // { "name": "Santa Monica Pier", "description": "A historic pier featuring an amusement park, aquarium, and oceanfront dining.", "latitude": 34.0094, "longitude": -118.4973, "source": "https://www.santamonicapier.org/" },
@@ -173,8 +214,8 @@ circles.forEach(function(loc) {
  {
    "name": "Silver Lake Triangle",
    "description": "A small triangular plaza where Griffith Park Blvd meets Santa Monica Blvd, often used as a community gathering spot.",
-   "latitude": 34.0908,
-   "longitude": -118.2845,
+   "latitude": 34.090595762254004,
+   "longitude": -118.2774549837917,
    "source": "https://www.discoverlosangeles.com/neighborhoods/silver-lake"
  },
  {
@@ -222,8 +263,8 @@ circles.forEach(function(loc) {
  {
    "name": "Van Nuys Blvd",
    "description": "A major thoroughfare in the San Fernando Valley, lined with various businesses and serving as a central artery for the community.",
-   "latitude": 34.2163,
-   "longitude": -118.4489,
+   "latitude": 34.26183615035315,
+   "longitude": -118.42762733201226,
    "source": "https://en.wikipedia.org/wiki/Van_Nuys_Boulevard"
  },
  {
@@ -267,7 +308,56 @@ circles.forEach(function(loc) {
    "latitude": 33.9787,
    "longitude": -118.4656,
    "source": "https://www.venicebeach.com/ocean-front-walk/"
- }
+ }, 
+ {
+    name: "Pacoima Neighborhood City Hall",
+    description: "",
+    latitude: 34.261883,
+    longitude: -118.427639,
+    source: ""
+  },
+  {
+    name: "Studio City Farmers Market (Ventura Blvd & Laurel Canyon)",
+    description: "",
+    latitude: 34.1439,
+    longitude: -118.3965,
+    source: ""
+  },
+  {
+    name: "Arroyo Seco Walkway (Lower Arroyo Park)",
+    description: "",
+    latitude: 34.1361,
+    longitude: -118.1644,
+    source: ""
+  },
+  {
+    name: "Brookside Park",
+    description: "",
+    latitude: 34.1347,
+    longitude: -118.1573,
+    source: ""
+  },
+  {
+    name: "Exposition Park",
+    description: "",
+    latitude: 34.0159,
+    longitude: -118.2884,
+    source: ""
+  },
+  {
+    name: "USC Village",
+    description: "",
+    latitude: 34.0256,
+    longitude: -118.2845,
+    source: ""
+  },
+  {
+    name: "Mercado La Paloma (South Grand & Exposition)",
+    description: "",
+    latitude: 34.01738, 
+    longitude: -118.27837,
+    source: ""
+  }
 
 
 ];
