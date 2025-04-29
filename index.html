@@ -11,7 +11,7 @@
        #map { position: absolute; top: 0; bottom: 0; right: 0; left: 0; }
    </style>
    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/1.7.0/leaflet.polylineDecorator.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/leaflet.polylinedecorator@1.7.0/dist/leaflet.polylineDecorator.min.js"></script>
    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
@@ -26,6 +26,9 @@
    <div id="map"></div>
 </body>
 <script>
+  L.Symbol = L.Symbol 
+            || (L.polylineDecorator && (L.polylineDecorator.Symbol || L.polylineDecorator.Symbols));
+
    var map = L.map("map").setView([34.0522, -118.2437], 12);
 
 
@@ -172,13 +175,6 @@
     description: "",
     lat:33.94595704707604, 
     lng:-118.23534456107261,
-    source: ""
-  },
-  {
-    name: "Huntington Park",
-    description: "",
-    lat:33.97288076408723, 
-    lng:-118.20489791328524,
     source: ""
   },
   {
@@ -472,13 +468,6 @@ circles.forEach(function(loc) {
     source: ""
   },
   {
-    name: "Huntington Park",
-    description: "",
-    lat:33.97288076408724, 
-    lng:-118.20489791328525,
-    source: ""
-  },
-  {
     name: "Augustus F. Hawkins Natural Park",
     description: "",
     lat: 33.99028,
@@ -513,28 +502,61 @@ locations.forEach(function(loc) {
 
 
 
-     // ---- Rail-to-River line ----
-  var railToRiverCoords = [
-    [33.981684539772104, -118.18704696271676], 
-    [33.981226736769166, -118.18272225964792], 
-    [33.980692630155396, -118.17798348999773], 
-    [33.97996776582387, -118.17039225747013], 
-    [33.97909029018904, -118.16206490442238] 
-  ];
-  var railToRiverLine = L.polyline(railToRiverCoords, {
-    color: 'purple', weight: 5, opacity: 0.7, dashArray: '8,6'
-  }).addTo(map).bindPopup('Rail to River Corridor');
 
-  L.polylineDecorator(railToRiverLine, {
-    patterns: [{
-      offset: '5%', repeat: '10%',
-      symbol: L.Symbol.arrowHead({
-        pixelSize: 10, polygon: true,
-        pathOptions: { color: 'red', fillOpacity: 1 }
-      })
-    }]
-  }).addTo(map);
-  // ---- end corridor code ----
+    // ---- Rail-to-River line ----
+var railToRiverCoords = [
+  [33.9816845, -118.187047], 
+  [33.9812267, -118.182722], 
+  [33.9806926, -118.177983],
+  [33.9799678, -118.170392],
+  [33.9790903, -118.162065]
+];
+var railToRiverLine = L.polyline(railToRiverCoords, {
+  color: 'purple', weight: 5, opacity: 0.7, dashArray: '8,6'
+}).addTo(map);
+
+if (L.polylineDecorator && L.Symbol && L.Symbol.arrowHead) {
+    L.polylineDecorator(railToRiverLine, {
+      patterns:[{
+        offset:'5%', repeat:'10%',
+        symbol: L.Symbol.arrowHead({
+          pixelSize:10, polygon:true,
+          pathOptions:{ color:'red', fillOpacity:1 }
+        })
+      }]
+    }).addTo(map);
+  }
+
+
+// ---- Huntington Park line (tweaked!) ----
+var huntingtonCoords = [
+  [33.9813718, -118.225229],
+  [33.9806925, -118.225178],
+  [33.9799922, -118.225128],
+  [33.9784025, -118.225238],
+  [33.9746137, -118.225221]
+];
+var huntingtonLine = L.polyline(huntingtonCoords, {
+  color: 'magenta', weight: 8, opacity: 1
+}).addTo(map);
+
+if (L.polylineDecorator && L.Symbol && L.Symbol.arrowHead) {
+    L.polylineDecorator(huntingtonLine, {
+      patterns:[{
+        offset:'5%', repeat:'10%',
+        symbol: L.Symbol.arrowHead({
+          pixelSize:10, polygon:true,
+          pathOptions:{ color:'red', fillOpacity:1 }
+        })
+      }]
+    }).addTo(map);
+  }
+
+
+// ---- auto-zoom to show both corridors ----
+var corridorGroup = L.featureGroup([railToRiverLine, huntingtonLine]).addTo(map);
+map.fitBounds(corridorGroup.getBounds().pad(0.3));
+
 
 
 
