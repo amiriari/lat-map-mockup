@@ -11,6 +11,7 @@
        #map { position: absolute; top: 0; bottom: 0; right: 0; left: 0; }
    </style>
    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-polylinedecorator/1.7.0/leaflet.polylineDecorator.min.js"></script>
    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
@@ -42,21 +43,21 @@
    // Adding circles
    var circles = [
   { name: "South Central LA", description: "", lat: 33.9381, lng: -118.2468, source: "" },
-  { name: "Florence-Graham", description: "", lat: 33.9285, lng: -118.2500, source: "" },
+  //{ name: "Florence-Graham", description: "", lat: 33.9285, lng: -118.2500, source: "" },
   { name: "Watts", description: "", lat: 33.9380, lng: -118.2752, source: "" },
-  { name: "Huntington Park", description: "", lat: 33.9248, lng: -118.2115, source: "" },
+  //{ name: "Huntington Park", description: "", lat: 33.9248, lng: -118.2115, source: "" },
   { name: "Walnut Park", description: "", lat: 33.9400, lng: -118.2211, source: "" },
   { name: "South LA", description: "", lat: 33.9481, lng: -118.2436, source: "" },
   { name: "Bell", description: "", lat: 33.9203, lng: -118.1861, source: "" },
   //{ name: "Willowbrook", description: "", lat: 33.9617, lng: -118.2519, source: "" },
   { name: "Cudahy", description: "", lat: 33.9232, lng: -118.1915, source: "" },
-  { name: "South Gate", description: "", lat: 33.9480, lng: -118.1956, source: "" },
+  //{ name: "South Gate", description: "", lat: 33.9480, lng: -118.1956, source: "" },
   { name: "Lynwood", description: "", lat: 33.9304, lng: -118.2116, source: "" },
   { name: "Paramount", description: "", lat: 33.8895, lng: -118.1598, source: "" },
   { name: "North Long Beach", description: "Close to lower-income areas", lat: 33.8719, lng: -118.0840, source: "" },
   { name: "Rancho Dominguez", description: "", lat: 33.8960, lng: -118.2283, source: "" },
-  { name: "Vernon / Southeast LA", description: "", lat: 33.9915, lng: -118.2488, source: "" },
-  { name: "Near Jordan Downs", description: "", lat: 33.9235, lng: -118.2764, source: "" },
+  //{ name: "Vernon / Southeast LA", description: "", lat: 33.9915, lng: -118.2488, source: "" },
+  //{ name: "Near Jordan Downs", description: "", lat: 33.9235, lng: -118.2764, source: "" },
   { name: "West Compton", description: "", lat: 33.9164, lng: -118.3414, source: "" },
   { name: "East Compton", description: "", lat: 33.8891, lng: -118.2980, source: "" },
   { name: "Dominguez", description: "", lat: 33.8645, lng: -118.2606, source: "" },
@@ -70,11 +71,11 @@
   { name: "Hyde Park", description: "", lat: 33.9569, lng: -118.3090, source: "" },
   { name: "Green Meadows", description: "", lat: 33.9640, lng: -118.2760, source: "" },
   { name: "South Park", description: "", lat: 33.9755, lng: -118.2683, source: "" },
-  { name: "Jefferson Park", description: "Borderline", lat: 34.0078, lng: -118.2746, source: "" },
+  //{ name: "Jefferson Park", description: "Borderline", lat: 34.0078, lng: -118.2746, source: "" },
   //{ name: "Baldwin Village", description: "", lat: 33.9985, lng: -118.3320, source: "" },
   { name: "Westmont", description: "", lat: 33.9465, lng: -118.3331, source: "" },
   { name: "Gramercy Park", description: "", lat: 33.9614, lng: -118.2994, source: "" },
-  { name: "Manchester Square", description: "", lat: 33.9431, lng: -118.3043, source: "" },
+  //{ name: "Manchester Square", description: "", lat: 33.9431, lng: -118.3043, source: "" },
   { name: "West Athens", description: "", lat: 33.9313, lng: -118.3617, source: "" },
   { name: "Florence-Firestone East", description: "", lat: 33.9612, lng: -118.2325, source: "" },
 
@@ -106,15 +107,8 @@
   {
     name: "Gilbert Lindsay Recreation Center",
     description: "",
-    lat: 34.0045,
-    lng: -118.2645,
-    source: ""
-  },
-  {
-    name: "Augustus F. Hawkins Natural Park",
-    description: "",
-    lat: 33.99028,
-    lng: -118.24667,
+    lat: 34.00741341790959,
+    lng: -118.26830285964907,
     source: ""
   },
   {
@@ -129,6 +123,69 @@
     description: "",
     lat: 33.970015,
     lng: -118.242017,
+    source: ""
+  },
+  {
+    name: "Central Avenue Jazz Park",
+    description: "",
+    lat: 34.006793316198,
+    lng: -118.25609267824598,
+    source: ""
+  },
+  {
+    name: "Miller Way",
+    description: "",
+    lat:33.936312269822025, 
+    lng:-118.173215615033,
+    source: ""
+  },
+  {
+    name: "Legacy High School Complex",
+    description: "",
+    lat:33.94442604638332, 
+    lng:-118.18344371713648,
+    source: ""
+  },
+  {
+    name: "Nickerson Gardens",
+    description: "",
+    lat:33.93211203845958, 
+    lng:-118.24869970852033,
+    source: ""
+  },
+  {
+    name: "112th Street Elementary School",
+    description: "",
+    lat:33.933817087798225, 
+    lng:-118.25278950321756,
+    source: ""
+  },
+  {
+    name: "Southwest College",
+    description: "",
+    lat:33.929452978420805, 
+    lng:-118.30575091099142,
+    source: ""
+  },
+  {
+    name: "Jordan Downs",
+    description: "",
+    lat:33.94595704707604, 
+    lng:-118.23534456107261,
+    source: ""
+  },
+  {
+    name: "Huntington Park",
+    description: "",
+    lat:33.97288076408723, 
+    lng:-118.20489791328524,
+    source: ""
+  },
+  {
+    name: "Sante Fe",
+    description: "",
+    lat:33.945234671975925, 
+    lng:-118.08321507748913,
     source: ""
   }
 ];
@@ -357,16 +414,128 @@ circles.forEach(function(loc) {
     latitude: 34.01738, 
     longitude: -118.27837,
     source: ""
+  },
+  {
+    name: "Central Avenue Jazz Park",
+    description: "",
+    lat: 34.006793316198,
+    lng: -118.25609267824598,
+    source: ""
+  },
+  {
+    name: "James Slauson Recreation Center",
+    description: "",
+    lat: 33.99438760680036,
+    lng: -118.24714752287329,
+    source: ""
+  },
+  {
+    name: "Rio de Los Angeles State Park",
+    description: "",
+    lat: 34.0985176839746,
+    lng: -118.23675172256625,
+    source: ""
+  },
+  {
+    name: "Tweedy Blvd",
+    description: "",
+    lat: 33.942594035618576,
+    lng: -118.19069367122374,
+    source: ""
+  },
+  {
+    name: "Rosa Park Station",
+    description: "",
+    lat: 33.92781528726514,
+    lng: -118.19980412410277,
+    source: ""
+  },
+  {
+    name: "Magic Johnson Park",
+    description: "",
+    lat: 33.91958322800,
+    lng: -118.26336371916912,
+    source: ""
+  },
+  {
+    name: "Watts Tower",
+    description: "",
+    lat: 33.93936159693514,
+    lng: -118.24207011085167,
+    source: ""
+  },
+  {
+    name: "East Century",
+    description: "",
+    lat: 33.945059352,
+    lng: -118.25256714265271,
+    source: ""
+  },
+  {
+    name: "Huntington Park",
+    description: "",
+    lat:33.97288076408724, 
+    lng:-118.20489791328525,
+    source: ""
+  },
+  {
+    name: "Augustus F. Hawkins Natural Park",
+    description: "",
+    lat: 33.99028,
+    lng: -118.24667,
+    source: ""
   }
+
+
 
 
 ];
 
 
-   locations.forEach(function(loc) {
-       L.marker([loc.latitude, loc.longitude]).addTo(map)
-           .bindPopup("<b>" + loc.name + "</b><br>" + loc.description + "<br><a href='" + loc.source + "' target='_blank'>More Info</a>");
-   });
+locations.forEach(function(loc) {
+  // pick whichever pair is defined
+  const lat = loc.latitude !== undefined ? loc.latitude : loc.lat;
+  const lng = loc.longitude !== undefined ? loc.longitude : loc.lng;
+
+  // only add if both coords are real numbers
+  if (typeof lat === 'number' && typeof lng === 'number') {
+    L.marker([lat, lng])   // ← no { icon: redIcon } here
+     .addTo(map)
+     .bindPopup(
+       "<b>" + loc.name + "</b><br>"
+       + loc.description
+       + "<br><a href='" + loc.source + "' target='_blank'>More Info</a>"
+     );
+  } else {
+    console.warn("Skipping bad location:", loc);
+  }
+});
+
+
+
+     // ---- Rail-to-River line ----
+  var railToRiverCoords = [
+    [33.99010640444815, -118.17077479146738],
+    [33.97930833498801, -118.16650691927903], 
+    [33.96469699882561, -118.16792954334183], 
+    [33.9477229166025, -118.16836727381231], 
+    [33.937645790544344, -118.17219741551979] 
+  ];
+  var railToRiverLine = L.polyline(railToRiverCoords, {
+    color: 'purple', weight: 5, opacity: 0.7, dashArray: '8,6'
+  }).addTo(map).bindPopup('Rail to River Corridor');
+
+  L.polylineDecorator(railToRiverLine, {
+    patterns: [{
+      offset: '5%', repeat: '10%',
+      symbol: L.Symbol.arrowHead({
+        pixelSize: 10, polygon: true,
+        pathOptions: { color: 'red', fillOpacity: 1 }
+      })
+    }]
+  }).addTo(map);
+  // ---- end corridor code ----
+
 
 
 </script>
