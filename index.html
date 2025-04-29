@@ -531,13 +531,13 @@ if (L.polylineDecorator && L.Symbol && L.Symbol.arrowHead) {
 // ---- Huntington Park line (tweaked!) ----
 var huntingtonCoords = [
   [33.9813718, -118.225229],
-  [33.9806925, -118.225178],
-  [33.9799922, -118.225128],
+  //[33.9806925, -118.225178],
+  //[33.9799922, -118.225128],
   [33.9784025, -118.225238],
   [33.9746137, -118.225221]
 ];
 var huntingtonLine = L.polyline(huntingtonCoords, {
-  color: 'magenta', weight: 8, opacity: 1
+  color: 'purple', weight: 5, opacity: 0.7, dashArray: '8,6'
 }).addTo(map);
 
 if (L.polylineDecorator && L.Symbol && L.Symbol.arrowHead) {
