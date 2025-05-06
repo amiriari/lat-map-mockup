@@ -45,42 +45,28 @@
 
    // Adding circles
    var circles = [
-  { name: "South Central LA", description: "", lat: 33.9381, lng: -118.2468, source: "" },
-  //{ name: "Florence-Graham", description: "", lat: 33.9285, lng: -118.2500, source: "" },
-  { name: "Watts", description: "", lat: 33.9380, lng: -118.2752, source: "" },
-  //{ name: "Huntington Park", description: "", lat: 33.9248, lng: -118.2115, source: "" },
-  { name: "Walnut Park", description: "", lat: 33.9400, lng: -118.2211, source: "" },
-  { name: "South LA", description: "", lat: 33.9481, lng: -118.2436, source: "" },
-  { name: "Bell", description: "", lat: 33.9203, lng: -118.1861, source: "" },
-  //{ name: "Willowbrook", description: "", lat: 33.9617, lng: -118.2519, source: "" },
-  { name: "Cudahy", description: "", lat: 33.9232, lng: -118.1915, source: "" },
-  //{ name: "South Gate", description: "", lat: 33.9480, lng: -118.1956, source: "" },
-  { name: "Lynwood", description: "", lat: 33.9304, lng: -118.2116, source: "" },
-  { name: "Paramount", description: "", lat: 33.8895, lng: -118.1598, source: "" },
-  { name: "North Long Beach", description: "Close to lower-income areas", lat: 33.8719, lng: -118.0840, source: "" },
-  { name: "Rancho Dominguez", description: "", lat: 33.8960, lng: -118.2283, source: "" },
-  //{ name: "Vernon / Southeast LA", description: "", lat: 33.9915, lng: -118.2488, source: "" },
-  //{ name: "Near Jordan Downs", description: "", lat: 33.9235, lng: -118.2764, source: "" },
-  { name: "West Compton", description: "", lat: 33.9164, lng: -118.3414, source: "" },
-  { name: "East Compton", description: "", lat: 33.8891, lng: -118.2980, source: "" },
-  { name: "Dominguez", description: "", lat: 33.8645, lng: -118.2606, source: "" },
-  { name: "Carson", description: "", lat: 33.8616, lng: -118.2110, source: "" },
-  //{ name: "Vermont-Slauson", description: "", lat: 33.9898, lng: -118.2772, source: "" },
-  //{ name: "Central-Alameda", description: "", lat: 33.9716, lng: -118.2487, source: "" },
-  { name: "Historic South-Central", description: "", lat: 34.0039, lng: -118.2581, source: "" },
-  //{ name: "Exposition Park", description: "", lat: 34.014261, lng: -118.287594, source: "" }, 
-  //{ name: "USC/University Park", description: "", lat: 34.0266, lng: -118.2942, source: "" },
-  //{ name: "King Estates", description: "", lat: 34.0075, lng: -118.2912, source: "" },
-  { name: "Hyde Park", description: "", lat: 33.9569, lng: -118.3090, source: "" },
-  { name: "Green Meadows", description: "", lat: 33.9640, lng: -118.2760, source: "" },
-  { name: "South Park", description: "", lat: 33.9755, lng: -118.2683, source: "" },
-  //{ name: "Jefferson Park", description: "Borderline", lat: 34.0078, lng: -118.2746, source: "" },
-  //{ name: "Baldwin Village", description: "", lat: 33.9985, lng: -118.3320, source: "" },
-  { name: "Westmont", description: "", lat: 33.9465, lng: -118.3331, source: "" },
-  { name: "Gramercy Park", description: "", lat: 33.9614, lng: -118.2994, source: "" },
-  //{ name: "Manchester Square", description: "", lat: 33.9431, lng: -118.3043, source: "" },
-  { name: "West Athens", description: "", lat: 33.9313, lng: -118.3617, source: "" },
-  { name: "Florence-Firestone East", description: "", lat: 33.9612, lng: -118.2325, source: "" },
+   { name: "South Central LA", description: "A historically rich neighborhood known for its cultural diversity, activism, and pivotal role in LA’s history.", lat: 33.9381, lng: -118.2468, source: "https://en.wikipedia.org/wiki/South_Los_Angeles" },
+  { name: "Watts", description: "Famous for the Watts Towers and its deep cultural roots, Watts is a symbol of artistic expression and resilience.", lat: 33.9380, lng: -118.2752, source: "https://en.wikipedia.org/wiki/Watts,_Los_Angeles" },
+  { name: "Walnut Park", description: "A small yet dense community in South LA County with a largely Latino population and strong neighborhood pride.", lat: 33.9400, lng: -118.2211, source: "https://en.wikipedia.org/wiki/Walnut_Park,_California" },
+  { name: "South LA", description: "An expansive region known for its vibrant community, cultural activism, and evolving urban landscape.", lat: 33.9481, lng: -118.2436, source: "https://en.wikipedia.org/wiki/South_Los_Angeles" },
+  { name: "Bell", description: "A working-class city with a strong industrial past, now undergoing community-focused redevelopment.", lat: 33.9203, lng: -118.1861, source: "https://en.wikipedia.org/wiki/Bell,_California" },
+  { name: "Cudahy", description: "A compact and highly urbanized community with deep immigrant roots and a family-oriented environment.", lat: 33.9232, lng: -118.1915, source: "https://en.wikipedia.org/wiki/Cudahy,_California" },
+  { name: "Lynwood", description: "Home to diverse cultures and a strong sense of community, Lynwood blends suburban living with LA accessibility.", lat: 33.9304, lng: -118.2116, source: "https://en.wikipedia.org/wiki/Lynwood,_California" },
+  { name: "Paramount", description: "Known for its ice rink and local pride, Paramount is a dynamic suburb balancing residential life with light industry.", lat: 33.8895, lng: -118.1598, source: "https://en.wikipedia.org/wiki/Paramount,_California" },
+  { name: "North Long Beach", description: "An underserved area of Long Beach known for its tight-knit neighborhoods and growing redevelopment efforts.", lat: 33.8719, lng: -118.0840, source: "https://en.wikipedia.org/wiki/Long_Beach,_California" },
+  { name: "Rancho Dominguez", description: "An unincorporated community with historical roots dating back to the early Spanish land grants.", lat: 33.8960, lng: -118.2283, source: "https://en.wikipedia.org/wiki/Rancho_Dominguez,_California" },
+  { name: "West Compton", description: "A residential section of Compton known for its community strength and strong family networks.", lat: 33.9164, lng: -118.3414, source: "https://en.wikipedia.org/wiki/West_Compton,_California" },
+  { name: "East Compton", description: "Also called East Rancho Dominguez, this area has a suburban feel and is rich in Latinx and African-American culture.", lat: 33.8891, lng: -118.2980, source: "https://en.wikipedia.org/wiki/East_Compton,_California" },
+  { name: "Dominguez", description: "Part of the historic Rancho San Pedro land grant, Dominguez is a quiet residential area with strong community roots.", lat: 33.8645, lng: -118.2606, source: "" },
+  { name: "Carson", description: "A vibrant suburban city with diverse cultures, major sports venues, and a mix of industrial and residential zones.", lat: 33.8616, lng: -118.2110, source: "https://en.wikipedia.org/wiki/Carson,_California" },
+  { name: "Historic South-Central", description: "One of LA's oldest neighborhoods, historically home to jazz, Black businesses, and significant civil rights movements.", lat: 34.0039, lng: -118.2581, source: "https://en.wikipedia.org/wiki/Historic_South_Central_Los_Angeles" },
+  { name: "Hyde Park", description: "A largely residential area with growing development, known for its proximity to Inglewood and rich community history.", lat: 33.9569, lng: -118.3090, source: "https://en.wikipedia.org/wiki/Hyde_Park,_Los_Angeles" },
+  { name: "Green Meadows", description: "A low-density residential area with parks and access to major corridors in South LA.", lat: 33.9640, lng: -118.2760, source: "https://en.wikipedia.org/wiki/Green_Meadows,_Los_Angeles" },
+  { name: "South Park", description: "This neighborhood is undergoing revitalization and lies just south of Downtown LA, near the Staples Center.", lat: 33.9755, lng: -118.2683, source: "https://en.wikipedia.org/wiki/South_Park,_Los_Angeles" },
+  { name: "Westmont", description: "A residential neighborhood with a strong local identity, nestled between Inglewood and South LA.", lat: 33.9465, lng: -118.3331, source: "https://en.wikipedia.org/wiki/Westmont,_California" },
+  { name: "Gramercy Park", description: "A relatively quiet neighborhood with a suburban vibe and access to key transit routes in South LA.", lat: 33.9614, lng: -118.2994, source: "" },
+  { name: "West Athens", description: "An unincorporated area that mixes residential homes with community parks and schools.", lat: 33.9313, lng: -118.3617, source: "https://en.wikipedia.org/wiki/West_Athens,_California" },
+  { name: "Florence-Firestone East", description: "A high-density community known for strong cultural roots and community-led change initiatives.", lat: 33.9612, lng: -118.2325, source: "https://en.wikipedia.org/wiki/Florence-Graham,_California" },
 
   { name: "Hollywood between Highland and La Brea", description: "A vibrant section of Hollywood Boulevard featuring the Hollywood Walk of Fame, historic theaters, and bustling tourist attractions.", lat: 34.1016, lng: -118.3452, source: "https://en.wikipedia.org/wiki/Hollywood_Boulevard" },
   //{ name: "Sunset Boulevard", description: "An iconic 22-mile stretch running from Downtown Los Angeles to the Pacific Coast Highway, passing through Hollywood, Beverly Hills, and Bel Air, known for its nightlife and cultural landmarks.", lat: 34.0953, lng: -118.3726, source: "https://en.wikipedia.org/wiki/Sunset_Boulevard" },
@@ -482,13 +468,13 @@ circles.forEach(function(loc) {
 
 
 locations.forEach(function(loc) {
-  // pick whichever pair is defined
+  
   const lat = loc.latitude !== undefined ? loc.latitude : loc.lat;
   const lng = loc.longitude !== undefined ? loc.longitude : loc.lng;
 
-  // only add if both coords are real numbers
+
   if (typeof lat === 'number' && typeof lng === 'number') {
-    L.marker([lat, lng])   // ← no { icon: redIcon } here
+    L.marker([lat, lng])   
      .addTo(map)
      .bindPopup(
        "<b>" + loc.name + "</b><br>"
@@ -500,9 +486,6 @@ locations.forEach(function(loc) {
   }
 });
 
-
-
-
     // ---- Rail-to-River line ----
 var railToRiverCoords = [
   [33.9816845, -118.187047], 
@@ -513,7 +496,8 @@ var railToRiverCoords = [
 ];
 var railToRiverLine = L.polyline(railToRiverCoords, {
   color: 'purple', weight: 5, opacity: 0.7, dashArray: '8,6'
-}).addTo(map);
+}).addTo(map)
+  .bindPopup("Rail to River Corridor");
 
 if (L.polylineDecorator && L.Symbol && L.Symbol.arrowHead) {
     L.polylineDecorator(railToRiverLine, {
@@ -527,18 +511,16 @@ if (L.polylineDecorator && L.Symbol && L.Symbol.arrowHead) {
     }).addTo(map);
   }
 
-
-// ---- Huntington Park line (tweaked!) ----
+// ---- Huntington Park line  ----
 var huntingtonCoords = [
   [33.9813718, -118.225229],
-  //[33.9806925, -118.225178],
-  //[33.9799922, -118.225128],
   [33.9784025, -118.225238],
   [33.9746137, -118.225221]
 ];
 var huntingtonLine = L.polyline(huntingtonCoords, {
   color: 'purple', weight: 5, opacity: 0.7, dashArray: '8,6'
-}).addTo(map);
+}).addTo(map)
+  .bindPopup("Huntington Park Corridor");
 
 if (L.polylineDecorator && L.Symbol && L.Symbol.arrowHead) {
     L.polylineDecorator(huntingtonLine, {
@@ -553,7 +535,6 @@ if (L.polylineDecorator && L.Symbol && L.Symbol.arrowHead) {
   }
 
 
-// ---- auto-zoom to show both corridors ----
 var corridorGroup = L.featureGroup([railToRiverLine, huntingtonLine]).addTo(map);
 map.fitBounds(corridorGroup.getBounds().pad(0.3));
 
